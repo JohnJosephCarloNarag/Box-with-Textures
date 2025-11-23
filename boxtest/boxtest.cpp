@@ -49,6 +49,7 @@ float scaleX = 1.0f, scaleY = 1.0f, scaleZ = 1.0f;
 void drawPlane(){
 }
 
+//Cube for House
 void texturedCube(float size, GLuint texture, float repeat=1.0f) {
 	float s = size / 2;
 
@@ -107,6 +108,7 @@ void texturedCube(float size, GLuint texture, float repeat=1.0f) {
 	glDisable(GL_TEXTURE_2D);
 }
 
+//Roof
 void texturedRoof(float width, float height, float depth, GLuint texture, float repeat=1.0f) {
 	float w = width / 2;
 	float d = depth / 2;
@@ -207,7 +209,7 @@ void keyboardFunc(unsigned char key, int x, int y) {
 	glutPostRedisplay();
 }
 
-
+//Resize window
 void reshape(int w, int h) {
 	glViewport(0, 0, w, h);
 	glMatrixMode(GL_PROJECTION);
@@ -215,7 +217,6 @@ void reshape(int w, int h) {
 	gluPerspective(45.0, (double)w / (double)h, 1.0, 100.0);
 	glMatrixMode(GL_MODELVIEW);
 }
-
 
 //Lighting
 void lighting() {
@@ -236,7 +237,6 @@ void lighting() {
 	
 }
 
-
 //Display
 void display() {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -245,7 +245,6 @@ void display() {
 	gluLookAt(camX, camY, camZ, targetX, targetY, targetZ, 0.0, 1.0, 0.0);
 	house();
 }
-
 
 //Initialize 
 void init() {
